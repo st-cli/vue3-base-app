@@ -3,12 +3,21 @@
  * @Autor: houyueke
  * @Date: 2022-04-12 17:31:21
  * @LastEditors: houyueke
- * @LastEditTime: 2022-04-24 11:17:11
+ * @LastEditTime: 2022-04-28 11:26:10
 -->
 <script setup>
 import { useUserStore } from '@/store/userStore'
 import { message } from 'ant-design-vue'
 import { storeToRefs } from 'pinia'
+import { login } from '@/api/user'
+import { onMounted } from 'vue'
+
+onMounted(async () => {
+  await login({
+    password: '123456',
+    username: 'admin'
+  })
+})
 const user = useUserStore()
 const { username, getUserName } = storeToRefs(user)
 const handleClick = () => {

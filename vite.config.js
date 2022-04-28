@@ -3,7 +3,7 @@
  * @Autor: houyueke
  * @Date: 2022-04-12 11:54:11
  * @LastEditors: houyueke
- * @LastEditTime: 2022-04-24 11:00:47
+ * @LastEditTime: 2022-04-28 11:07:16
  */
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
@@ -79,10 +79,18 @@ export default defineConfig({
   server: {
     open: true,
     host: '0.0.0.0',
-    proxy: {}
+    proxy: {
+      '/api': {
+        target: 'http://192.168.1.58:8002',
+        changeOrigin: true
+        // rewrite: (path) => path.replace(/^\/api/, '')
+      }
+    }
   },
   build: {
-    sourcemap: false
+    sourcemap: false,
+    brotliSize: false,
+    chunkSizeWarningLimit: 2000
   },
   css: {
     preprocessorOptions: {

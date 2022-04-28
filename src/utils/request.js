@@ -3,14 +3,16 @@
  * @Autor: houyueke
  * @Date: 2022-04-01 14:55:16
  * @LastEditors: houyueke
- * @LastEditTime: 2022-04-21 11:33:51
+ * @LastEditTime: 2022-04-28 11:06:12
  */
 import axios from 'axios'
 import router from '@/router/index'
-import { Message } from 'ant-design-vue'
+import { message } from 'ant-design-vue'
+
+const baseURL = import.meta.env.VITE_AXIOS_BASE_URL
 
 const service = axios.create({
-  baseURL: process.env.VUE_APP_BASE_URL,
+  baseURL: baseURL,
   timeout: 5000
 })
 
@@ -28,24 +30,34 @@ service.interceptors.request.use(
 //设置响应拦截器
 service.interceptors.response.use(
   async response => {
-    return response.data
+    if (response.status === 200) {
+      if (response.data.code != '0' && response.data.message) {
+        message.warning(response.data.message)
+      }
+      return Promise.resolve(response.data)
+    } else {
+      return Promise.reject(response)
+    }
   },
   async error => {
-    if (error.response.status) {
-      handleError(error.response.status, error.response.message)
+    const { response } = error
+    if (response) {
+      errorHandler(response.status, response.message)
+      return Promise.reject(response)
+    } else {
+      message.error('网络异常')
     }
-    return Promise.reject(error)
   }
 )
 /**
  * @description: 错误处理
  * @param {*} code 状态码
- * @param {*} message 错误信息
+ * @param {*} msg 错误信息
  * @return {*}
  * @author: houyueke
  */
-function handleError(code, message) {
-  switch (code) {
+const errorHandler = (status, msg) => {
+  switch (status) {
     case 401:
       //未登录
       router.replace({
@@ -56,8 +68,8 @@ function handleError(code, message) {
       })
       break
     case 403:
-      //token过期
-      messageTooltip(message)
+      //token过期,重新登录
+      message.warning(msg)
       localStorage.removeItem('token')
       setTimeout(() => {
         router.replace({
@@ -69,21 +81,15 @@ function handleError(code, message) {
       }, 1000)
       break
     case 404:
-      messageTooltip(message)
+      message.error('网络请求不存在')
       break
     case 500:
-      messageTooltip(message)
+      message.error('服务器异常')
       break
     default:
+      message.error(msg)
       break
   }
-}
-
-function messageTooltip(message) {
-  Message({
-    message: message,
-    type: 'error'
-  })
 }
 
 export default service
