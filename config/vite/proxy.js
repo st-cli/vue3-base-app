@@ -19,8 +19,8 @@ export function setupProxy(mode) {
     //develop proxy
     [API_BASE_URL]: {
       target: API_TARGET_URL,
-      changeOrigin: true,
-      rewrite: path => path.replace(new RegExp(`^${API_BASE_URL}`), '')
+      changeOrigin: true
+      //   rewrite: path => path.replace(new RegExp(`^${API_BASE_URL}`), '')
     }
   }
 }

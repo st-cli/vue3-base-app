@@ -3,7 +3,7 @@
  * @Autor: houyueke
  * @Date: 2022-04-28 10:28:44
  * @LastEditors: houyueke
- * @LastEditTime: 2022-04-28 10:30:58
+ * @LastEditTime: 2022-05-12 10:43:36
  */
 import request from '@/utils/request'
 
@@ -15,7 +15,15 @@ import request from '@/utils/request'
  */
 export async function login(data) {
   return request({
-    url: '/v1/login/access-token',
+    url: '/v1/user/login',
+    method: 'post',
+    data
+  })
+}
+
+export async function getUserList(data) {
+  return request({
+    url: '/v1/table/list',
     method: 'post',
     data
   })

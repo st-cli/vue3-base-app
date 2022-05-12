@@ -5,7 +5,7 @@ export function setupAutoRegisterComponentPlugin() {
   return Components({
     resolvers: [
       AntDesignVueResolver({
-        importLess: true
+        importStyle: 'less'
       })
     ],
     dts: 'src/component.d.ts',
