@@ -3,7 +3,7 @@
  * @Autor: houyueke
  * @Date: 2022-04-12 16:52:15
  * @LastEditors: houyueke
- * @LastEditTime: 2022-05-13 14:35:05
+ * @LastEditTime: 2022-05-13 15:02:01
  */
 import BaseLayout from '@/layouts/BaseLayout.vue'
 
@@ -31,6 +31,12 @@ const routes = [
         name: 'Cloud',
         component: () =>
           import(/* webpackChunkName: "about" */ '../views/Cloud.vue')
+      },
+      {
+        path: '/pinia',
+        name: 'Pinia',
+        component: () =>
+          import(/* webpackChunkName: "about" */ '../views/Pinia.vue')
       }
     ]
   }

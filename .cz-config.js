@@ -3,7 +3,7 @@
  * @Autor: houyueke
  * @Date: 2022-04-08 17:26:33
  * @LastEditors: houyueke
- * @LastEditTime: 2022-04-08 17:49:18
+ * @LastEditTime: 2022-05-13 15:08:28
  */
 module.exports = {
   types: [
@@ -17,7 +17,7 @@ module.exports = {
     { value: 'test', name: 'test:     测试相关' },
     { value: 'chore', name: 'chore:    杂项修改' },
     { value: 'revert', name: 'revert:   版本回退' },
-    { value: 'delete', name: 'revert:   删除文件' }
+    { value: 'delete', name: 'delete:   删除文件' }
   ],
   scopes: [],
   messages: {

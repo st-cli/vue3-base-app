@@ -20,6 +20,10 @@
           <upload-outlined />
           <span>词云</span>
         </a-menu-item>
+        <a-menu-item key="/pinia">
+          <upload-outlined />
+          <span>pinia示例</span>
+        </a-menu-item>
       </a-menu>
     </a-layout-sider>
     <a-layout>

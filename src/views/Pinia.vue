@@ -3,8 +3,19 @@
  * @Autor: houyueke
  * @Date: 2022-04-12 17:31:21
  * @LastEditors: houyueke
- * @LastEditTime: 2022-05-12 10:44:23
+ * @LastEditTime: 2022-05-13 15:05:38
 -->
+<template>
+  <div class="fa">
+    <h1>{{ username }}</h1>
+    <h2>{{ getUserName }}</h2>
+    <a-space>
+      <a-button type="primary" @click="handleClick">修改pinia状态</a-button>
+      <a-button type="primary" @click="showModal">mock list </a-button>
+    </a-space>
+  </div>
+</template>
+
 <script setup>
 import { useUserStore } from '@/store/userStore'
 import { message } from 'ant-design-vue'
@@ -34,30 +45,4 @@ const showModal = () => {
 }
 </script>
 
-<template>
-  <div class="fa">
-    <h1>{{ username }}</h1>
-    <h2>{{ getUserName }}</h2>
-    <a-button type="primary" @click="handleClick">点击事件</a-button>
-    <a-card>sdfsdf</a-card>
-  </div>
-  <div>
-    <a-button type="primary" @click="showModal">Open Modal</a-button>
-    <a-modal v-model:visible="visible" title="Basic Modal">
-      <p>Some contents...</p>
-      <p>Some contents...</p>
-      <p>Some contents...</p>
-    </a-modal>
-  </div>
-</template>
-
-<style lang="less" scoped>
-.fa {
-  border: 1px solid red;
-
-  h1 {
-    font-size: 28px;
-    color: green;
-  }
-}
-</style>
+<style lang="less" scoped></style>
