@@ -14,7 +14,6 @@ declare module '@vue/runtime-core' {
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     Src: typeof import('./components/ChinaMap/src/index.vue')['default']
-    WordCloud: typeof import('./components/WordCloud/index.vue')['default']
   }
 }
 

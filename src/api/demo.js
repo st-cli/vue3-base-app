@@ -3,7 +3,7 @@
  * @Autor: houyueke
  * @Date: 2022-04-28 10:28:44
  * @LastEditors: houyueke
- * @LastEditTime: 2022-05-13 11:49:02
+ * @LastEditTime: 2022-05-13 14:31:10
  */
 import request from '@/utils/request'
 
@@ -22,6 +22,15 @@ export async function getChinaData() {
 export async function getWorldData() {
   return request({
     url: '/v1/world',
+    method: 'get'
+  })
+}
+/**
+ * @description: 获取词云数据
+ */
+export async function getCloudData() {
+  return request({
+    url: '/v1/cloud',
     method: 'get'
   })
 }

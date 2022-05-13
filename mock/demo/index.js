@@ -27,6 +27,17 @@ const world = [
     value: 98
   }
 ]
+const cloud = (() => {
+  const result = []
+  for (let i = 0; i < 100; i++) {
+    result.push({
+      name: '@cname()',
+      value: Math.floor(Math.random() * 100)
+    })
+  }
+  return result
+})()
+
 export default [
   {
     url: '/mock/v1/china',
@@ -40,6 +51,13 @@ export default [
     method: 'get',
     response: () => {
       return resultSuccess(world)
+    }
+  },
+  {
+    url: '/mock/v1/cloud',
+    method: 'get',
+    response: () => {
+      return resultSuccess(cloud)
     }
   }
 ]

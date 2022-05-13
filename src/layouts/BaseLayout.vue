@@ -16,9 +16,9 @@
           <video-camera-outlined />
           <span>世界地图</span>
         </a-menu-item>
-        <a-menu-item key="3">
+        <a-menu-item key="/cloud">
           <upload-outlined />
-          <span>nav 3</span>
+          <span>词云</span>
         </a-menu-item>
       </a-menu>
     </a-layout-sider>

@@ -3,7 +3,7 @@
  * @Autor: houyueke
  * @Date: 2022-04-12 16:52:15
  * @LastEditors: houyueke
- * @LastEditTime: 2022-05-13 11:44:17
+ * @LastEditTime: 2022-05-13 14:35:05
  */
 import BaseLayout from '@/layouts/BaseLayout.vue'
 
@@ -25,6 +25,12 @@ const routes = [
         name: 'World',
         component: () =>
           import(/* webpackChunkName: "about" */ '../views/World.vue')
+      },
+      {
+        path: '/cloud',
+        name: 'Cloud',
+        component: () =>
+          import(/* webpackChunkName: "about" */ '../views/Cloud.vue')
       }
     ]
   }
