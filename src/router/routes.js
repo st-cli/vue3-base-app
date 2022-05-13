@@ -3,22 +3,25 @@
  * @Autor: houyueke
  * @Date: 2022-04-12 16:52:15
  * @LastEditors: houyueke
- * @LastEditTime: 2022-04-12 17:36:03
+ * @LastEditTime: 2022-05-13 10:35:37
  */
-import Home from '../views/Home.vue'
+import BaseLayout from '@/layouts/BaseLayout.vue'
 
 const routes = [
-    {
-        path: '/',
-        name: 'Home',
-        component: Home
-    },
-    {
-        path: '/about',
-        name: 'About',
+  {
+    path: '/',
+    name: 'Home',
+    redirect: '/china',
+    component: BaseLayout,
+    children: [
+      {
+        path: '/china',
+        name: 'China',
         component: () =>
-            import(/* webpackChunkName: "about" */ '../views/About.vue')
-    }
+          import(/* webpackChunkName: "about" */ '../views/About.vue')
+      }
+    ]
+  }
 ]
 
-export default routes 
+export default routes
