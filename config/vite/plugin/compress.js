@@ -4,6 +4,6 @@ export function setupCompressPlugin() {
   return viteCompression({
     ext: '.gz',
     threshold: 1024,
-    deleteOriginFile: true
+    deleteOriginFile: false
   })
 }

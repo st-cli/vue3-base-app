@@ -9,6 +9,7 @@ export function setupAutoRegisterComponentPlugin() {
       })
     ],
     dts: 'src/component.d.ts',
+    directoryAsNamespace: true,
     include: [/\.vue$/, /\.vue\?vue/],
     exclude: [
       /[\\/]node_modules[\\/]/,
