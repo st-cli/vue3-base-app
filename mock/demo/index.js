@@ -13,12 +13,33 @@ const china = [
     value: 98
   }
 ]
+const world = [
+  {
+    name: 'China',
+    value: 24
+  },
+  {
+    name: 'Afghanistan',
+    value: 56
+  },
+  {
+    name: 'Angola',
+    value: 98
+  }
+]
 export default [
   {
     url: '/mock/v1/china',
     method: 'get',
     response: () => {
       return resultSuccess(china)
+    }
+  },
+  {
+    url: '/mock/v1/world',
+    method: 'get',
+    response: () => {
+      return resultSuccess(world)
     }
   }
 ]

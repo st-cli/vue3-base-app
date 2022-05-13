@@ -3,7 +3,7 @@
  * @Autor: houyueke
  * @Date: 2022-04-21 11:35:32
  * @LastEditors: houyueke
- * @LastEditTime: 2022-05-13 10:57:21
+ * @LastEditTime: 2022-05-13 11:57:28
 -->
 <template>
   <div ref="chinaMapRef" :style="{ width, height }"></div>
@@ -37,6 +37,7 @@ const { setOptions, echarts } = useEcharts(chinaMapRef)
  */
 const registJson = async () => {
   const json = await (await import('./china.json')).default
+  console.log(json)
   echarts.registerMap('china', json)
 }
 

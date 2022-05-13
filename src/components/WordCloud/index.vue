@@ -49,11 +49,12 @@ onBeforeUnmount(() => {
 
 watch(
   () => props.data,
-  (newData) => {
+  newData => {
     if (newData.length) {
       init()
     }
-  })
+  }
+)
 
 /**
  * @description: 初始化词云

@@ -3,7 +3,7 @@
  * @Autor: houyueke
  * @Date: 2022-04-28 10:28:44
  * @LastEditors: houyueke
- * @LastEditTime: 2022-05-13 11:06:21
+ * @LastEditTime: 2022-05-13 11:49:02
  */
 import request from '@/utils/request'
 
@@ -16,11 +16,12 @@ export async function getChinaData() {
     method: 'get'
   })
 }
-
-export async function getUserList(data) {
+/**
+ * @description: 获取世界城市数据
+ */
+export async function getWorldData() {
   return request({
-    url: '/v1/table/list',
-    method: 'post',
-    data
+    url: '/v1/world',
+    method: 'get'
   })
 }

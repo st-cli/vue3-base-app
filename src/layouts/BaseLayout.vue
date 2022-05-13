@@ -2,14 +2,19 @@
   <a-layout class="layout">
     <a-layout-sider v-model:collapsed="collapsed" :trigger="null" collapsible>
       <div class="logo" />
-      <a-menu v-model:selectedKeys="selectedKeys" theme="dark" mode="inline">
-        <a-menu-item key="1">
+      <a-menu
+        v-model:selectedKeys="selectedKeys"
+        theme="dark"
+        mode="inline"
+        @click="handleMenuClick"
+      >
+        <a-menu-item key="/china">
           <user-outlined />
-          <span>nav 1</span>
+          <span>中国地图</span>
         </a-menu-item>
-        <a-menu-item key="2">
+        <a-menu-item key="/world">
           <video-camera-outlined />
-          <span>nav 2</span>
+          <span>世界地图</span>
         </a-menu-item>
         <a-menu-item key="3">
           <upload-outlined />
@@ -52,11 +57,18 @@ import {
   MenuFoldOutlined
 } from '@ant-design/icons-vue'
 import { ref } from 'vue'
-import { useRoute } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 
 const route = useRoute()
+const router = useRouter()
 const selectedKeys = ref([route.path])
 const collapsed = ref(false)
+
+const handleMenuClick = ({ key }) => {
+  router.push({
+    path: key
+  })
+}
 </script>
 <style lang="less" scoped>
 .layout {

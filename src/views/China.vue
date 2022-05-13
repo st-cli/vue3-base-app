@@ -3,14 +3,14 @@
  * @Autor: houyueke
  * @Date: 2022-04-12 17:31:21
  * @LastEditors: houyueke
- * @LastEditTime: 2022-05-13 11:07:33
+ * @LastEditTime: 2022-05-13 11:14:54
 -->
 <template>
-  <ChinaHeatmap :data="chinaData"></ChinaHeatmap>
+  <china-map :data="chinaData"></china-map>
 </template>
 
 <script setup>
-import ChinaHeatmap from '@/components/Common/ChinaHeatmap'
+import ChinaMap from '@/components/ChinaMap'
 import { ref, onMounted } from 'vue'
 import { getChinaData } from '@/api/demo'
 const chinaData = ref([])

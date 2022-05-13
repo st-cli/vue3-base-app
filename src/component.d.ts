@@ -4,8 +4,6 @@
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    AButton: typeof import('ant-design-vue/es')['Button']
-    ACard: typeof import('ant-design-vue/es')['Card']
     AConfigProvider: typeof import('ant-design-vue/es')['ConfigProvider']
     ALayout: typeof import('ant-design-vue/es')['Layout']
     ALayoutContent: typeof import('ant-design-vue/es')['LayoutContent']
@@ -13,13 +11,10 @@ declare module '@vue/runtime-core' {
     ALayoutSider: typeof import('ant-design-vue/es')['LayoutSider']
     AMenu: typeof import('ant-design-vue/es')['Menu']
     AMenuItem: typeof import('ant-design-vue/es')['MenuItem']
-    AModal: typeof import('ant-design-vue/es')['Modal']
-    ChinaHeatmap: typeof import('./components/Common/ChinaHeatmap/index.vue')['default']
-    HelloWorld: typeof import('./components/HelloWorld.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    WordCloud: typeof import('./components/Common/WordCloud/index.vue')['default']
-    WorldHeatmap: typeof import('./components/Common/WorldHeatmap/index.vue')['default']
+    Src: typeof import('./components/ChinaMap/src/index.vue')['default']
+    WordCloud: typeof import('./components/WordCloud/index.vue')['default']
   }
 }
 
