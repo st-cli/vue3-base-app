@@ -8,7 +8,7 @@ export function setupAutoRegisterComponentPlugin() {
         importStyle: 'less'
       })
     ],
-    dts: 'src/component.d.ts',
+    dts: false,
     directoryAsNamespace: true,
     include: [/\.vue$/, /\.vue\?vue/],
     exclude: [

@@ -3,7 +3,7 @@
  * @Autor: houyueke
  * @Date: 2022-04-12 17:31:21
  * @LastEditors: houyueke
- * @LastEditTime: 2022-05-13 15:05:38
+ * @LastEditTime: 2022-05-13 15:25:40
 -->
 <template>
   <div class="fa">
@@ -11,7 +11,7 @@
     <h2>{{ getUserName }}</h2>
     <a-space>
       <a-button type="primary" @click="handleClick">修改pinia状态</a-button>
-      <a-button type="primary" @click="showModal">mock list </a-button>
+      <a-button type="primary" @click="handleMock">mock list </a-button>
     </a-space>
   </div>
 </template>
@@ -21,7 +21,7 @@ import { useUserStore } from '@/store/userStore'
 import { message } from 'ant-design-vue'
 import { storeToRefs } from 'pinia'
 import { login, getUserList } from '@/api/user'
-import { onMounted, ref } from 'vue'
+import { onMounted } from 'vue'
 
 onMounted(async () => {
   await login({
@@ -39,9 +39,12 @@ const handleClick = () => {
   user.setUserName('test')
   message.success('点击成功')
 }
-const visible = ref(false)
-const showModal = () => {
-  visible.value = true
+const handleMock = async () => {
+  await getUserList({
+    page: 1,
+    pageSize: 15
+  })
+  message.success('数据mock成功')
 }
 </script>
 

@@ -3,7 +3,7 @@
  * @Autor: houyueke
  * @Date: 2022-04-12 17:31:21
  * @LastEditors: houyueke
- * @LastEditTime: 2022-05-13 11:14:54
+ * @LastEditTime: 2022-05-13 15:20:56
 -->
 <template>
   <china-map :data="chinaData"></china-map>
