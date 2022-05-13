@@ -32,7 +32,7 @@ export function useEcharts(elRef) {
       return
     }
     instance = echarts.init(el)
-    useEventListener(window, resizeFn)
+    useEventListener(window, 'resize', resizeFn)
   }
   /**
    * @description: 设置图表options
