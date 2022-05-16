@@ -44,9 +44,9 @@ const registJson = async () => {
 
 watch(
   () => [...props.data],
-  newData => {
+  async newData => {
     if (newData.length) {
-      registJson()
+      await registJson()
       setOptions({
         visualMap: {
           type: 'piecewise',
