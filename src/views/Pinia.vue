@@ -12,7 +12,7 @@
     <a-space>
       <a-button type="primary" @click="handleClick">修改pinia状态</a-button>
     </a-space>
-    <h2>{{dateToFormat('2022-04-20T18:26:41.970956+08:00')}}</h2>
+    <h2>{{ dateToFormat('2022-04-20T18:26:41.970956+08:00') }}</h2>
   </div>
   <a-table
     :loading="loading"
@@ -30,7 +30,7 @@ import { storeToRefs } from 'pinia'
 import { login, getUserList } from '@/api/user'
 import { onMounted, reactive } from 'vue'
 import { usePagination } from '@/hooks/usePagination'
-import {dateToFormat} from '@/utils/format'
+import { dateToFormat } from '@/utils/format'
 const columns = [
   {
     title: '账号',
