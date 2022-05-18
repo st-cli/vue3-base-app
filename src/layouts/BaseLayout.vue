@@ -28,6 +28,10 @@
           <upload-outlined />
           <span>登录</span>
         </a-menu-item>
+        <a-menu-item key="/echarts">
+          <upload-outlined />
+          <span>echarts图表</span>
+        </a-menu-item>
       </a-menu>
     </a-layout-sider>
     <a-layout>
