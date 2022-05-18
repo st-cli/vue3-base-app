@@ -9,6 +9,12 @@ import BaseLayout from '@/layouts/BaseLayout.vue'
 
 const routes = [
   {
+    path: '/login',
+    name: 'Login',
+    component: () =>
+      import(/* webpackChunkName: "about" */ '../views/LoginIn.vue')
+  },
+  {
     path: '/',
     name: 'Home',
     redirect: '/china',

@@ -28,6 +28,7 @@ module.exports = {
   plugins: ['vue'],
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 1 : 0,
-    'no-debugger': process.env.NODE_ENV === 'production' ? 1 : 0
+    'no-debugger': process.env.NODE_ENV === 'production' ? 1 : 0,
+    'vue/multi-word-component-names': 0
   }
 }

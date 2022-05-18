@@ -24,6 +24,10 @@
           <upload-outlined />
           <span>pinia示例</span>
         </a-menu-item>
+        <a-menu-item key="/login">
+          <upload-outlined />
+          <span>登录</span>
+        </a-menu-item>
       </a-menu>
     </a-layout-sider>
     <a-layout>

@@ -15,15 +15,12 @@ dayjs.locale('zh-cn')
 <template>
   <a-config-provider :locale="zhCN">
     <router-view />
-
-
-    
   </a-config-provider>
 </template>
 
 <style lang="less">
 #app {
   width: 100%;
-  height: 100%;
+  // height: 100%;
 }
 </style>
