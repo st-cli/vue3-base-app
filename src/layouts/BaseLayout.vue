@@ -24,6 +24,10 @@
           <upload-outlined />
           <span>pinia示例</span>
         </a-menu-item>
+        <a-menu-item key="/echarts">
+          <upload-outlined />
+          <span>echarts图表</span>
+        </a-menu-item>
       </a-menu>
     </a-layout-sider>
     <a-layout>

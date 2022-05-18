@@ -1,0 +1,30 @@
+// type: 'line', //图表类型'line';'bar'直接传入子组件
+//   title: { subtext: '标题', left: '50%', top: '20' }, 直接传入子组件
+
+// 配置项
+const data = {
+  xAxis: [], //x轴的数据
+  series: [], //y轴的数据
+  legend: [], //图例
+  grid:{},//图表位置
+  areaStyle: {}, //面积堆叠图配置项,不传或传入为null默认为折线图
+  indicator: [//雷达图指示器
+    {
+      name: '高中', // 指示器名称
+      max: 15000, // 指示器的最大值，可选，建议设置
+      color: 'red'// 标签特定的颜色。
+    },
+  ]
+}
+
+const other = {
+  legend:{},//自定义关于图例的配置项
+  tooltip:{},//自定义关于tooltip的配置项
+  xAxis:{},//自定义关于横轴的配置项
+  yAxis:{},//自定义关于纵轴的配置项
+  radar:{},//自定义关于雷达图坐标系的配置项
+  series:{},//自定义series其他配置项
+  others:{},//echarts中setOption其他配置项
+}
+
+
