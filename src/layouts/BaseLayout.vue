@@ -2,12 +2,7 @@
   <a-layout class="layout">
     <a-layout-sider v-model:collapsed="collapsed" :trigger="null" collapsible>
       <div class="logo" />
-      <a-menu
-        v-model:selectedKeys="selectedKeys"
-        theme="dark"
-        mode="inline"
-        @click="handleMenuClick"
-      >
+      <a-menu v-model:selectedKeys="selectedKeys" theme="dark" mode="inline" @click="handleMenuClick">
         <a-menu-item key="/china">
           <user-outlined />
           <span>中国地图</span>
@@ -24,29 +19,23 @@
           <upload-outlined />
           <span>pinia示例</span>
         </a-menu-item>
+        <a-menu-item key="/g6">
+          <upload-outlined />
+          <span>G6 hooks</span>
+        </a-menu-item>
       </a-menu>
     </a-layout-sider>
     <a-layout>
       <a-layout-header style="background: #fff; padding: 0">
-        <menu-unfold-outlined
-          v-if="collapsed"
-          class="trigger"
-          @click="() => (collapsed = !collapsed)"
-        />
-        <menu-fold-outlined
-          v-else
-          class="trigger"
-          @click="() => (collapsed = !collapsed)"
-        />
+        <menu-unfold-outlined v-if="collapsed" class="trigger" @click="() => (collapsed = !collapsed)" />
+        <menu-fold-outlined v-else class="trigger" @click="() => (collapsed = !collapsed)" />
       </a-layout-header>
-      <a-layout-content
-        :style="{
-          margin: '16px',
-          padding: '16px',
-          background: '#fff',
-          minHeight: '280px'
-        }"
-      >
+      <a-layout-content :style="{
+        margin: '16px',
+        padding: '16px',
+        background: '#fff',
+        minHeight: '280px'
+      }">
         <router-view></router-view>
       </a-layout-content>
     </a-layout>

@@ -37,6 +37,12 @@ const routes = [
         name: 'Pinia',
         component: () =>
           import(/* webpackChunkName: "about" */ '../views/Pinia.vue')
+      },
+      {
+        path: '/g6',
+        name: 'G6',
+        component: () =>
+          import(/* webpackChunkName: "about" */ '../views/G6.vue')
       }
     ]
   }
