@@ -60,7 +60,7 @@ export function useEcharts(elRef) {
    * @description: 图表resize
    */
   function resize() {
-    instance.resize()
+    instance && instance.resize()
   }
   /**
    * @description: 获取图表实例

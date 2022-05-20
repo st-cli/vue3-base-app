@@ -21,7 +21,8 @@ export function generateModifyVars(dark = false) {
   const modifyVars = getThemeVariables({ dark })
   return {
     ...modifyVars,
-    'primary-color': '#1ebda0',
-    'link-color': '#3860F4'
+    'primary-color': '#357fdc',
+    'link-color': '#3860F4',
+    'border-radius-base': '4px'
   }
 }

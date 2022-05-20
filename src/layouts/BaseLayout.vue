@@ -32,6 +32,10 @@
           <upload-outlined />
           <span>echarts图表</span>
         </a-menu-item>
+        <a-menu-item key="/card">
+          <upload-outlined />
+          <span>Card</span>
+        </a-menu-item>
       </a-menu>
     </a-layout-sider>
     <a-layout>
@@ -49,9 +53,7 @@
       </a-layout-header>
       <a-layout-content
         :style="{
-          margin: '16px',
           padding: '16px',
-          background: '#fff',
           minHeight: '280px'
         }"
       >

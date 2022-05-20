@@ -12,7 +12,7 @@ const routes = [
     path: '/login',
     name: 'Login',
     component: () =>
-      import(/* webpackChunkName: "about" */ '../views/LoginIn.vue')
+      import(/* webpackChunkName: "about" */ '../views/login/index.vue')
   },
   {
     path: '/',
@@ -49,6 +49,12 @@ const routes = [
         name: 'Echarts',
         component: () =>
           import(/* webpackChunkName: "about" */ '../views/Charts.vue')
+      },
+      {
+        path: '/card',
+        name: 'Card',
+        component: () =>
+          import(/* webpackChunkName: "about" */ '../views/Card.vue')
       }
     ]
   }

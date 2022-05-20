@@ -37,7 +37,6 @@ const { setOptions, echarts } = useEcharts(chinaMapRef)
  */
 const registJson = async () => {
   const json = await (await import('./china.json')).default
-  console.log(json)
   echarts.registerMap('china', json)
 }
 

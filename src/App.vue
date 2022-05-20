@@ -21,6 +21,8 @@ dayjs.locale('zh-cn')
 <style lang="less">
 #app {
   width: 100%;
-  // height: 100%;
+  min-width: 1200px;
+  overflow-x: scroll;
+  height: 100vh;
 }
 </style>

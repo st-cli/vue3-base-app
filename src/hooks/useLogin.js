@@ -1,54 +1,85 @@
-import { ref } from 'vue'
-// import { useRouter } from "vue-router"
-import { message } from 'ant-design-vue'
-export const useLogin = (userloginInfo, loginFunc) => {
-  // const router = useRouter()
-  const tip = ref('')
-  const isRouter = ref(false)
-  const { userName, passWord, remember } = userloginInfo
+import { reactive, ref } from 'vue'
+import { useRouter } from 'vue-router'
+import { useUserStore } from '@/store/useUserStore'
+import { Base64 } from 'js-base64'
+
+export function useLogin() {
+  const userStore = useUserStore()
+
+  const router = useRouter()
+  //按钮loading 状态
   const loading = ref(false)
 
-  console.log('remeber', remember)
-  // 校验帐号密码流程
-  console.log('testeste', /^\w{6,24}$/.test(passWord))
-  if (!/^\w{6,24}$/.test(passWord)) {
-    tip.value = '密码是6-24个字符'
-  }
-  /**
-     *  code: 0 // -1
-        data: {name: 'admin', token: 'testtoken'}
-        message: "success"
-     */
-  console.log(tip.value, 'tipvalue')
-  const login = async () => {
-    setLoading(true)
-    const response = await loginFunc({
-      password: passWord,
-      username: userName
-    })
-    console.log('response', response)
-    if (response.code === 0) {
-      // 请求成功的处理
-      // 是否记住密码
-      if (remember) {
-        localStorage.setItem('token', response.data.token)
-        localStorage.setItem('username', response.data.name)
+  const formState = ref({
+    username: '',
+    password: '',
+    autoLogin: false
+  })
+
+  const rulesState = reactive({
+    username: [
+      {
+        required: true,
+        message: '请输入用户名'
       }
-      isRouter.value = true
-      // router.push("/")
-      message.success(response.message)
-      setLoading(false)
+    ],
+    password: [
+      {
+        required: true,
+        message: '请输入密码'
+      }
+    ]
+  })
+
+  function setLoading(value) {
+    loading.value = value
+  }
+
+  function setUserLoginInfo() {
+    const info = {
+      ...formState.value,
+      password: Base64.encode(formState.value.password)
     }
+    userStore.setUserLoginInfo(info)
   }
 
-  if (tip.value === '') {
-    login()
+  function getUserInfo() {
+    const isAuto = userStore.getIsAutoLogin || false
+    if (isAuto) {
+      formState.value = {
+        ...userStore.getUserLoginInFo,
+        password: Base64.decode(userStore.getUserLoginInFo.password)
+      }
+      if (formState.value.username && formState.value.password) {
+        return true
+      }
+    }
+    return false
   }
 
-  function setLoading(flag) {
-    loading.value = flag
+  function loginSuccess(data) {
+    setUserLoginInfo()
+    saveUserInfo(data)
+    routerNavigation()
   }
+
+  function saveUserInfo(info) {
+    userStore.setUserInfo(info)
+  }
+
+  function routerNavigation() {
+    router.push({
+      path: '/'
+    })
+  }
+
   return {
-    tip
+    loading,
+    formState,
+    rulesState,
+    setLoading,
+    loginSuccess,
+    userStore,
+    getUserInfo
   }
 }
