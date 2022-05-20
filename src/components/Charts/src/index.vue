@@ -50,10 +50,11 @@ const props = defineProps({
 })
 
 onMounted(() => {})
+
 const getOthersOptions = val => {
   if (props.others) {
     let obj = props.others[val] || props.others.value[val]
-    return obj != undefined ? { ...obj } : {}
+    return obj ? { ...obj } : {}
   }
   return {}
 }
@@ -183,10 +184,4 @@ watch(
 )
 </script>
 
-<style>
-.chartsRef {
-  width: 500px;
-  height: 500px;
-  background-color: pink;
-}
-</style>
+<style></style>
