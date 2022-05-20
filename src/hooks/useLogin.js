@@ -3,23 +3,22 @@ import { ref } from 'vue'
 import { message } from 'ant-design-vue'
 export const useLogin = (userloginInfo, loginFunc) => {
   // const router = useRouter()
-  const tip = ref('')
+  // const tip = ref('')
   const isRouter = ref(false)
+
   const { userName, passWord, remember } = userloginInfo
+  console.log(passWord)
   const loading = ref(false)
 
   console.log('remeber', remember)
-  // 校验帐号密码流程
-  console.log('testeste', /^\w{6,24}$/.test(passWord))
-  if (!/^\w{6,24}$/.test(passWord)) {
-    tip.value = '密码是6-24个字符'
-  }
+
   /**
      *  code: 0 // -1
         data: {name: 'admin', token: 'testtoken'}
         message: "success"
      */
-  console.log(tip.value, 'tipvalue')
+  // console.log(tip.value, 'tipvalue')
+
   const login = async () => {
     setLoading(true)
     const response = await loginFunc({
@@ -41,14 +40,13 @@ export const useLogin = (userloginInfo, loginFunc) => {
     }
   }
 
-  if (tip.value === '') {
-    login()
-  }
+  login()
 
   function setLoading(flag) {
     loading.value = flag
   }
   return {
-    tip
+    // tip
+    // validatePass
   }
 }
