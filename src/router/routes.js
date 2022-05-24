@@ -5,7 +5,8 @@
  * @LastEditors: houyueke
  * @LastEditTime: 2022-05-13 15:02:01
  */
-import BaseLayout from '@/layouts/BaseLayout.vue'
+// import BaseLayout from '@/layouts/BaseLayout.vue'
+import BaseLayout from '@/components/Layout_LR/src/index.vue' //左右布局layout
 
 const routes = [
   {
