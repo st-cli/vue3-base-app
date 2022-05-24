@@ -11,6 +11,7 @@ export const useUserStore = defineStore('user', {
   state: () => ({
     username: '',
     token: '',
+    userImg: '',
     userLoginInfo: {}
   }),
   persist: {
@@ -19,7 +20,7 @@ export const useUserStore = defineStore('user', {
       {
         key: 'user_store',
         storage: localStorage,
-        paths: ['username', 'token']
+        paths: ['username', 'token', 'userImg']
       },
       {
         key: 'login_info',
@@ -31,14 +32,16 @@ export const useUserStore = defineStore('user', {
   getters: {
     getUserName: state => state.username,
     getUserToken: state => state.token,
+    getUserImg: state => state.userImg,
     getIsAutoLogin: state => state.userLoginInfo.autoLogin,
     getUserLoginInFo: state => state.userLoginInfo
   },
   actions: {
     setUserInfo(data) {
-      const { name, token } = data
+      const { name, token, userImg } = data
       this.username = name
       this.token = token
+      this.userImg = userImg
     },
     setUserLoginInfo(info) {
       this.userLoginInfo = info

@@ -36,6 +36,10 @@
           <upload-outlined />
           <span>Card</span>
         </a-menu-item>
+        <a-menu-item key="/topNav">
+          <upload-outlined />
+          <span>TopNav</span>
+        </a-menu-item>
       </a-menu>
     </a-layout-sider>
     <a-layout>

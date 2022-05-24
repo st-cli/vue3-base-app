@@ -2,6 +2,7 @@ import { reactive, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { useUserStore } from '@/store/useUserStore'
 import { Base64 } from 'js-base64'
+import { validatePass } from '../utils/validate.js'
 
 export function useLogin() {
   const userStore = useUserStore()
@@ -26,7 +27,8 @@ export function useLogin() {
     password: [
       {
         required: true,
-        message: '请输入密码'
+        // message: '请输入密码'
+        validator: validatePass
       }
     ]
   })
