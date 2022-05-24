@@ -43,6 +43,11 @@ const menuList = [
     icon: MenuFoldOutlined
   },
   {
+    key: '/topNav',
+    title: 'TopNav',
+    icon: MenuFoldOutlined
+  },
+  {
     key: '/more',
     title: '二级菜单',
     icon: MenuUnfoldOutlined,
