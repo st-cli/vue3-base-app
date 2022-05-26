@@ -10,6 +10,7 @@ import App from './App.vue'
 import { setupRouter } from './router'
 import { setupPinia } from './store'
 import 'ant-design-vue/es/message/style/index'
+import '../src/assets/style/global.css'
 
 const app = createApp(App)
 

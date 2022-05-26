@@ -5,9 +5,15 @@
  * @LastEditors: houyueke
  * @LastEditTime: 2022-05-13 15:02:01
  */
-import BaseLayout from '@/layouts/BaseLayout.vue'
+import BaseLayout from '@/layouts/index.vue'
 
 const routes = [
+  {
+    path: '/login',
+    name: 'Login',
+    component: () =>
+      import(/* webpackChunkName: "login" */ '../views/login/index.vue')
+  },
   {
     path: '/',
     name: 'Home',
@@ -39,10 +45,22 @@ const routes = [
           import(/* webpackChunkName: "about" */ '../views/Pinia.vue')
       },
       {
-        path: '/g6',
-        name: 'G6',
+        path: '/echarts',
+        name: 'Echarts',
         component: () =>
-          import(/* webpackChunkName: "about" */ '../views/G6.vue')
+          import(/* webpackChunkName: "about" */ '../views/Charts.vue')
+      },
+      {
+        path: '/card',
+        name: 'Card',
+        component: () =>
+          import(/* webpackChunkName: "about" */ '../views/Card.vue')
+      },
+      {
+        path: '/topNav',
+        name: 'TopNav',
+        component: () =>
+          import(/* webpackChunkName: "about" */ '../views/TopNav.vue')
       }
     ]
   }

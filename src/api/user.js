@@ -28,3 +28,14 @@ export async function getUserList(data) {
     data
   })
 }
+
+/**
+ * @description: 获取echarts图表数据
+ */
+export async function getChartsData(data) {
+  return request({
+    url: '/v1/charts',
+    method: 'post',
+    data
+  })
+}

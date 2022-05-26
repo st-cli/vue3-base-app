@@ -1,0 +1,33 @@
+.ant-menu-submenu-placement-bottomLeft {
+    /* left: 698px !important; */
+    top: 144px !important;
+}
+.ant-menu-dark.ant-menu-submenu-popup {
+    max-width: 464px;
+    min-width: 156px;
+}
+.bigSub{
+    float: left;
+    
+}
+.ant-menu-dark .ant-menu-item:hover {
+    background: #357fdc;
+}
+.ant-menu-dark.ant-menu-horizontal > .ant-menu-item:hover {
+    background-color: #001529;
+}
+.ant-menu-vertical .ant-menu-item {
+    padding: 0 30px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+
+.ant-menu-vertical .ant-menu-item:not(:last-child) {
+    margin-bottom: 0;
+}
+
+.ant-menu-dark.ant-menu-horizontal > .ant-menu-item, .ant-menu-dark.ant-menu-horizontal > .ant-menu-submenu {
+    padding: 0 36px;
+}
+  
