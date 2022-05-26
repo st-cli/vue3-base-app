@@ -3,7 +3,7 @@
     v-model:selectedKeys="selectedKeys"
     theme="dark"
     mode="horizontal"
-    :style="{ lineHeight: '64px' }"
+    :style="{ lineHeight: '64px', fontSize: '16px' }"
     @click="handleMenuClick"
   >
     <template v-for="subItem in data">
@@ -69,16 +69,9 @@ const handleMenuClick = select => {
   padding: 21px 24px;
 }
 
-:deep .ant-menu-dark.ant-menu-horizontal > .ant-menu-item {
-  /* padding: 0 36px; */
-  /* min-width: 156px; */
-}
 :deep .ant-menu.ant-menu-dark .ant-menu-item-selected {
   background-color: #001529;
 }
-/* :deep .ant-menu-dark.ant-menu-horizontal > .ant-menu-item:hover {
-    background-color: #001529;
-} */
 
 :deep .ant-menu-submenu {
   display: flex;

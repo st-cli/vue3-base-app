@@ -16,3 +16,7 @@
 .ant-menu-dark.ant-menu-horizontal > .ant-menu-item:hover {
     background-color: #001529;
 }
+.ant-menu-vertical .ant-menu-item {
+    padding: 0 30px;
+  }
+  

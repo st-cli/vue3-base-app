@@ -76,7 +76,6 @@ import {
 } from '@ant-design/icons-vue'
 import { ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-
 const route = useRoute()
 const router = useRouter()
 const selectedKeys = ref([route.path])
