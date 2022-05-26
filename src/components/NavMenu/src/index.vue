@@ -77,6 +77,7 @@ const handleMenuClick = select => {
   display: flex;
   flex: wrap;
 }
+/* :deep  */
 
 :deep .ant-menu-dark .ant-menu-sub,
 .ant-menu.ant-menu-dark .ant-menu-sub {

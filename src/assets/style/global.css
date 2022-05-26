@@ -18,5 +18,16 @@
 }
 .ant-menu-vertical .ant-menu-item {
     padding: 0 30px;
-  }
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+
+.ant-menu-vertical .ant-menu-item:not(:last-child) {
+    margin-bottom: 0;
+}
+
+.ant-menu-dark.ant-menu-horizontal > .ant-menu-item, .ant-menu-dark.ant-menu-horizontal > .ant-menu-submenu {
+    padding: 0 36px;
+}
   
