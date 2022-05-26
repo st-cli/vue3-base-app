@@ -41,30 +41,6 @@ const menuList = [
     key: '/card',
     title: 'Card',
     icon: MenuFoldOutlined
-  },
-  {
-    key: '/topNav',
-    title: 'TopNav',
-    icon: MenuFoldOutlined
-  },
-  {
-    key: '/more',
-    title: '二级菜单',
-    icon: MenuUnfoldOutlined,
-    children: [
-      {
-        key: '/dome1',
-        title: '二级菜单1'
-      },
-      {
-        key: '/dome2',
-        title: '二级菜单1'
-      },
-      {
-        key: '/card',
-        title: 'Card'
-      }
-    ]
   }
 ]
 export default menuList

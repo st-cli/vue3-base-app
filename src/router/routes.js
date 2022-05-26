@@ -5,15 +5,14 @@
  * @LastEditors: houyueke
  * @LastEditTime: 2022-05-13 15:02:01
  */
-// import BaseLayout from '@/layouts/BaseLayout.vue'
-import BaseLayout from '@/components/Layout_LR/src/index.vue' //左右布局layout
+import BaseLayout from '@/layouts/index.vue'
 
 const routes = [
   {
     path: '/login',
     name: 'Login',
     component: () =>
-      import(/* webpackChunkName: "about" */ '../views/login/index.vue')
+      import(/* webpackChunkName: "login" */ '../views/login/index.vue')
   },
   {
     path: '/',
