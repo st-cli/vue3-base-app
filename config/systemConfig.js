@@ -5,4 +5,4 @@ export const subSystemTitle =
 
 export const showLogo = true
 
-export const isSider = false //是否为侧边栏布局
+export const isSider = true //是否为侧边栏布局

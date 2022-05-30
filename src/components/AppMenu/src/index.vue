@@ -12,7 +12,11 @@
           <component :is="subItem.icon"></component>
         </template>
         <template #title>{{ subItem.title }}</template>
-        <a-menu-item v-for="item in subItem.children" :key="item.key">
+        <a-menu-item
+          v-for="item in subItem.children"
+          :key="item.key"
+          :class="subItem.children.length > 4 ? 'bigSub' : 'smallSub'"
+        >
           <component :is="item.icon"></component>
           <span>{{ item.title }}</span>
         </a-menu-item>
@@ -65,7 +69,7 @@ const handleMenuClick = ({ key }) => {
 }
 
 :deep(.ant-menu.ant-menu-dark .ant-menu-item-selected) {
-  background-color: #001529;
+  background-color: #001529 !important;
 }
 
 :deep(.ant-menu-submenu) {

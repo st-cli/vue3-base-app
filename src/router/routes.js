@@ -55,13 +55,13 @@ const routes = [
         name: 'Card',
         component: () =>
           import(/* webpackChunkName: "about" */ '../views/Card.vue')
-      },
-      {
-        path: '/topNav',
-        name: 'TopNav',
-        component: () =>
-          import(/* webpackChunkName: "about" */ '../views/TopNav.vue')
       }
+      // {
+      //   path: '/topNav',
+      //   name: 'TopNav',
+      //   component: () =>
+      //     import(/* webpackChunkName: "about" */ '../views/TopNav.vue')
+      // }
     ]
   }
 ]

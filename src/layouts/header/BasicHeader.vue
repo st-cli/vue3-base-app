@@ -21,8 +21,8 @@ import AppUser from '@/components/AppUser'
     margin-right: 100px;
   }
 
-  .menu {
-    flex: 1;
+  :deep(.ant-menu.ant-menu-dark .ant-menu-item-selected) {
+    background-color: #001529 !important;
   }
 }
 </style>
