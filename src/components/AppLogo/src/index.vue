@@ -1,5 +1,5 @@
 <template>
-  <div class="logo">
+  <div class="logo" :class="showTitle ? '' : 'padding16'">
     <img width="32" src="@/assets/logo.png" alt="" />
     <div v-show="showTitle" class="logoName">
       <div class="CName">世通亨奇</div>
@@ -18,6 +18,9 @@ defineProps({
 </script>
 
 <style scoped lang="less">
+.padding16 {
+  padding: 16px 24px 16px 16px !important;
+}
 .logo {
   display: flex;
   padding: 16px 24px;

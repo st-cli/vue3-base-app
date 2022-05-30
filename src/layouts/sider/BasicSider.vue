@@ -42,4 +42,21 @@ const collapsed = ref(false)
     color: #1890ff;
   }
 }
+.sider {
+  min-height: calc(100vh - 17px);
+}
+</style>
+<style lang="less" scoped>
+.ant-layout-sider-collapsed {
+  flex: 0 0 64px !important;
+  max-width: 64px !important;
+  min-width: 64px !important;
+  width: 64px !important;
+  :deep(.ant-layout-sider-trigger) {
+    width: 64px !important;
+  }
+}
+:deep(.ant-menu-dark .ant-menu-inline.ant-menu-sub) {
+  background: #001529 !important;
+}
 </style>
