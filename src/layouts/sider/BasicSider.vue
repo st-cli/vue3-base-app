@@ -21,7 +21,6 @@ import { ref } from 'vue'
 import AppLogo from '@/components/AppLogo'
 import AppMenu from '@/components/AppMenu'
 import { MenuUnfoldOutlined, MenuFoldOutlined } from '@ant-design/icons-vue'
-
 const collapsed = ref(false)
 </script>
 

@@ -55,7 +55,32 @@ const routes = [
         name: 'Card',
         component: () =>
           import(/* webpackChunkName: "about" */ '../views/Card.vue')
+      },
+      {
+        path: '/single_line',
+        name: 'Singleline',
+        component: () =>
+          import(
+            /* webpackChunkName: "about" */ '../views/chart/SingleLine.vue'
+          )
+      },
+      {
+        path: '/more_line',
+        name: 'Moreline',
+        component: () =>
+          import(
+            /* webpackChunkName: "about" */ '../views/chart/MoreLineChart.vue'
+          )
+      },
+      {
+        path: '/area_line',
+        name: 'AreaLine',
+        component: () =>
+          import(
+            /* webpackChunkName: "about" */ '../views/chart/LineAreaChart.vue'
+          )
       }
+
       // {
       //   path: '/topNav',
       //   name: 'TopNav',
