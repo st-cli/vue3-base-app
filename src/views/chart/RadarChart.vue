@@ -38,17 +38,6 @@ const radar = async () => {
     legend,
     indicator
   }
-  //雷达图其他配置项使用---设置图例样式
-  radarOthers.value = {
-    legend: {
-      icon: 'rect',
-      top: '40%',
-      left: '15%',
-      itemWidth: 10, // 图例标记的图形宽度。[ default: 25 ]
-      itemHeight: 10 // 图例标记的图形高度。[ default: 14
-    }
-  }
-  console.log('*****others', radarOthers)
 }
 </script>
 
