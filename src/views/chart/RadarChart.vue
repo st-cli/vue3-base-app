@@ -17,6 +17,11 @@ import ChartRadar from '@/components/ChartRadar'
 import { getChartsData } from '@/api/user'
 import { onMounted, reactive } from 'vue'
 
+//雷达图的雷达区域的颜色设置，组件默认有三种颜色
+const areaColor = reactive({
+  color: ['#1890ff', '#2fc25b'],
+  bgColor: ['#b9ddff78', '#c0eccd82']
+})
 let radarData = reactive({})
 
 onMounted(() => {
