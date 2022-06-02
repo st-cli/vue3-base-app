@@ -33,7 +33,7 @@ const menuList = [
     icon: UploadOutlined
   },
   {
-    key: '/',
+    key: '/echarts',
     title: 'echarts图表',
     icon: UploadOutlined,
     children: [

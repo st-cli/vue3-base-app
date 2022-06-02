@@ -3,6 +3,8 @@
     v-model:selectedKeys="selectedKeys"
     theme="dark"
     :mode="mode"
+    :open-keys="openKeys.value"
+    @open-change="onOpenChange"
     :style="{ lineHeight: '64px' }"
     @click="handleMenuClick"
   >
@@ -30,10 +32,10 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted, reactive } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import menuList from './menu'
-defineProps({
+const props = defineProps({
   mode: {
     type: String,
     default: 'horizontal' // horizontal|inline
@@ -43,10 +45,36 @@ defineProps({
 const route = useRoute()
 const router = useRouter()
 const selectedKeys = ref([route.path])
+const openKeys = reactive([''])
+
+onMounted(() => {
+  openKeys.value = ['']
+  if (props.mode === 'inline') {
+    initMenu()
+  }
+})
 
 const handleMenuClick = ({ key }) => {
   router.push({
     path: key
+  })
+}
+const onOpenChange = opens => {
+  if (opens.length !== 0) {
+    openKeys.value = [opens[1]]
+  } else {
+    openKeys.value = ['']
+  }
+}
+const initMenu = () => {
+  menuList.forEach(subItem => {
+    if (subItem.children?.length) {
+      subItem.children.forEach(item => {
+        if (item.key === route.path) {
+          openKeys.value = [...[subItem.key]]
+        }
+      })
+    }
   })
 }
 </script>

@@ -3,11 +3,12 @@
     top: 64px !important;
 }
 .ant-menu-dark.ant-menu-submenu-popup {
-    max-width: 464px;
+    max-width: 465px;
     min-width: 156px;
 }
 .bigSub{
-    float: left;
+    display: inline-block;
+    width: 155px;
     
 }
 .ant-menu-dark .ant-menu-item:hover {
