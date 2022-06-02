@@ -8,6 +8,29 @@
 <template>
   <div class="chart">
     <div>
+      <h3>柱状图</h3>
+      <ChartBar id="bar" :data="barData" height="300px"></ChartBar>
+    </div>
+    <div>
+      <h3>饼图</h3>
+      <ChartPie
+        id="pie"
+        :data="pieData"
+        height="300px"
+        width="800px"
+        style="margin: 0 auto"
+      ></ChartPie>
+    </div>
+    <div>
+      <h3>雷达图</h3>
+      <ChartRadar
+        id="radar"
+        :data="radarData"
+        height="300px"
+        :areaColor="areaColor"
+      ></ChartRadar>
+    </div>
+    <div>
       <h3>单条折线图</h3>
       <Charts
         id="lineChart"
@@ -31,7 +54,7 @@
       <h3>面积堆叠图</h3>
       <Charts id="lineAreaChart" :data="lineAreaData" height="300px"></Charts>
     </div>
-    <div>
+    <!-- <div>
       <h3>柱状图</h3>
       <Charts id="barChart" :data="barData" type="bar" height="300px"></Charts>
     </div>
@@ -47,15 +70,23 @@
         :others="radarOthers"
         :data="radarData"
       ></Charts>
-    </div>
+    </div> -->
   </div>
 </template>
 
 <script setup>
 import Charts from '@/components/Charts'
+import ChartBar from '@/components/ChartBar'
+import ChartPie from '@/components/ChartPie'
+import ChartRadar from '@/components/ChartRadar'
 import { getChartsData } from '@/api/user'
-import { onMounted, reactive } from 'vue'
+import { onMounted, reactive, ref } from 'vue'
 
+//雷达图的雷达区域的颜色设置，组件默认有三种颜色
+const areaColor = ref({
+  color: ['#1890ff', '#2fc25b'],
+  bgColor: ['#b9ddff78', '#c0eccd82']
+})
 let lineData = reactive({})
 let lineMoreData = reactive({})
 let lineAreaData = reactive({})
