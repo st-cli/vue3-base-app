@@ -19,7 +19,7 @@
 </template>
 
 <script setup>
-import MoreLineChart from '@/components/chartMoreLine'
+import MoreLineChart from '@/components/ChartMoreLine'
 import { getChartsData } from '@/api/user'
 import { onMounted, reactive } from 'vue'
 

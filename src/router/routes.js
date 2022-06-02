@@ -45,12 +45,6 @@ const routes = [
           import(/* webpackChunkName: "about" */ '../views/Pinia.vue')
       },
       {
-        path: '/echarts',
-        name: 'Echarts',
-        component: () =>
-          import(/* webpackChunkName: "about" */ '../views/Charts.vue')
-      },
-      {
         path: '/card',
         name: 'Card',
         component: () =>
