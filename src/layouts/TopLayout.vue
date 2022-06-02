@@ -15,3 +15,10 @@
 <script setup>
 import BasicHeader from './header/BasicHeader.vue'
 </script>
+
+<style lang="less" scoped>
+.layout{
+    height:100%;
+}
+
+</style>

@@ -45,17 +45,66 @@ const routes = [
           import(/* webpackChunkName: "about" */ '../views/Pinia.vue')
       },
       {
-        path: '/echarts',
-        name: 'Echarts',
-        component: () =>
-          import(/* webpackChunkName: "about" */ '../views/Charts.vue')
-      },
-      {
         path: '/card',
         name: 'Card',
         component: () =>
           import(/* webpackChunkName: "about" */ '../views/Card.vue')
-      }
+      },
+      {
+        path: '/single_line',
+        name: 'Singleline',
+        component: () =>
+          import(
+            /* webpackChunkName: "about" */ '../views/chart/SingleLine.vue'
+          )
+      },
+      {
+        path: '/more_line',
+        name: 'Moreline',
+        component: () =>
+          import(
+            /* webpackChunkName: "about" */ '../views/chart/MoreLineChart.vue'
+          )
+      },
+      {
+        path: '/area_line',
+        name: 'AreaLine',
+        component: () =>
+          import(
+            /* webpackChunkName: "about" */ '../views/chart/LineAreaChart.vue'
+          )
+      },
+      {
+        path: '/bar',
+        name: 'Bar',
+        component: () =>
+          import(
+            /* webpackChunkName: "about" */ '../views/chart/BarChart.vue'
+          )
+      },
+      {
+        path: '/pie',
+        name: 'Pie',
+        component: () =>
+          import(
+            /* webpackChunkName: "about" */ '../views/chart/PieChart.vue'
+          )
+      },
+      {
+        path: '/radar',
+        name: 'Radar',
+        component: () =>
+          import(
+            /* webpackChunkName: "about" */ '../views/chart/RadarChart.vue'
+          )
+      },
+
+      // {
+      //   path: '/topNav',
+      //   name: 'TopNav',
+      //   component: () =>
+      //     import(/* webpackChunkName: "about" */ '../views/TopNav.vue')
+      // }
     ]
   }
 ]

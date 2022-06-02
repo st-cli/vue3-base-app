@@ -24,7 +24,7 @@
 </template>
 
 <script setup>
-import { useUserStore } from '@/store/userStore'
+import { useUserStore } from '@/store/useUserStore'
 import { message } from 'ant-design-vue'
 import { storeToRefs } from 'pinia'
 import { login, getUserList } from '@/api/user'
