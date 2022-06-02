@@ -79,7 +79,31 @@ const routes = [
           import(
             /* webpackChunkName: "about" */ '../views/chart/LineAreaChart.vue'
           )
-      }
+      },
+      {
+        path: '/bar',
+        name: 'Bar',
+        component: () =>
+          import(
+            /* webpackChunkName: "about" */ '../views/chart/BarChart.vue'
+          )
+      },
+      {
+        path: '/pie',
+        name: 'Pie',
+        component: () =>
+          import(
+            /* webpackChunkName: "about" */ '../views/chart/PieChart.vue'
+          )
+      },
+      {
+        path: '/radar',
+        name: 'Radar',
+        component: () =>
+          import(
+            /* webpackChunkName: "about" */ '../views/chart/RadarChart.vue'
+          )
+      },
 
       // {
       //   path: '/topNav',
