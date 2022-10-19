@@ -10,6 +10,27 @@ import { generateModifyVars } from './config/themeConfig'
 import { createVitePlugin } from './config/vite/plugin'
 import { setupProxy } from './config/vite/proxy'
 import { configManualChunk } from './config/vite/optimizer'
+import viteSentry from 'vite-plugin-sentry'
+
+const sentryConfig = {
+  url: 'http://192.168.1.201:8088',
+  authToken: '314f135c282c49cf83c70fbad87ea01cc3329cf4391344c1a29c87c0cd1a6966',
+  org: 'sentry',
+  project: 'sgk-rw',
+  release: 'v1.0.0', // main.js release version 保持同步
+  deploy: {
+    env: 'production'
+  },
+  setCommits: {
+    auto: true
+  },
+  // skipEnvironmentCheck: true, // 可以跳过环境检查
+  sourceMaps: {
+    include: ['./dist/assets'],
+    ignore: ['node_modules'],
+    urlPrefix: '~/assets'
+  }
+}
 
 export default ({ mode, command }) => {
   return {
@@ -18,7 +39,10 @@ export default ({ mode, command }) => {
         '@': resolve(__dirname, './src')
       }
     },
-    plugins: createVitePlugin(command),
+    plugins: [
+      ...createVitePlugin(command),
+      process.env.NODE_ENV === 'production' ? viteSentry(sentryConfig) : null
+    ],
     server: {
       open: true,
       host: '0.0.0.0',
@@ -27,7 +51,7 @@ export default ({ mode, command }) => {
       proxy: setupProxy(mode)
     },
     build: {
-      sourcemap: false,
+      sourcemap: process.env.NODE_ENV === 'production',
       brotliSize: false,
       chunkSizeWarningLimit: 2000,
       rollupOptions: {
