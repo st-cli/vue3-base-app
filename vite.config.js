@@ -11,20 +11,20 @@ import { createVitePlugin } from './config/vite/plugin'
 import { setupProxy } from './config/vite/proxy'
 import { configManualChunk } from './config/vite/optimizer'
 import viteSentry from 'vite-plugin-sentry'
+import { url, authToken, org, project, release } from './config/sentryConfig'
 
 const sentryConfig = {
-  url: 'http://192.168.1.201:8088',
-  authToken: '314f135c282c49cf83c70fbad87ea01cc3329cf4391344c1a29c87c0cd1a6966',
-  org: 'sentry',
-  project: 'sgk-rw',
-  release: 'v1.0.0', // main.js release version 保持同步
+  url,
+  authToken,
+  org,
+  project,
+  release,
   deploy: {
     env: 'production'
   },
   setCommits: {
     auto: true
   },
-  // skipEnvironmentCheck: true, // 可以跳过环境检查
   sourceMaps: {
     include: ['./dist/assets'],
     ignore: ['node_modules'],

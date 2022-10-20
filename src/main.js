@@ -13,6 +13,7 @@ import 'ant-design-vue/es/message/style/index'
 import '../src/assets/style/global.css'
 import * as Sentry from '@sentry/vue'
 import { BrowserTracing } from '@sentry/tracing'
+import { dsn, release } from '../config/sentryConfig'
 
 const app = createApp(App)
 
@@ -25,7 +26,7 @@ setupPinia(app)
 if (process.env.NODE_ENV === 'production') {
   Sentry.init({
     app,
-    dsn: 'http://7fa639425c2b4d50afb40a08f78de676@192.168.1.201:8088/5',
+    dsn,
     integrations: [
       new BrowserTracing({
         routingInstrumentation: Sentry.vueRouterInstrumentation(router),
@@ -33,7 +34,8 @@ if (process.env.NODE_ENV === 'production') {
       })
     ],
     tracesSampleRate: 1.0,
-    release: 'v1.0.0'
+    logErrors: true,
+    release
   })
 }
 
