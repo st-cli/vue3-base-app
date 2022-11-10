@@ -30,7 +30,7 @@ if (process.env.NODE_ENV === 'production') {
     integrations: [
       new BrowserTracing({
         routingInstrumentation: Sentry.vueRouterInstrumentation(router),
-        tracingOrigins: ['localhost', 'my-site-url.com', /^\//]
+        tracingOrigins: ['localhost', /^\//]
       })
     ],
     tracesSampleRate: 1.0,
